@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
+import java.io.*;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -112,4 +114,20 @@ public class ChatController {
 		Collections.addAll(userList.getItems(), users);
 		
 	}
+	
+	private static String historyOutputToTheChat (File fileName) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
+		String line = null;
+		StringBuilder stringBuilder = new StringBuilder();
+		ArrayList <String> listHistory = new ArrayList <>();
+		while ((line = reader.readLine()) != null) {
+			listHistory.add(line);
+		}
+		int hundredString = listHistory.size() - 100;
+		for (int i = hundredString; i < listHistory.size() - 1; i++) {
+			stringBuilder.append(listHistory.get(i)).append("\n").append("\n");
+		}
+		return stringBuilder.toString();
+	}
+	
 }

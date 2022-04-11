@@ -44,7 +44,6 @@ public class MyServer {
 		System.out.println("Ожидание клиента...");
 		Socket socket = serverSocket.accept();
 		System.out.println("Клиент подключился!");
-		
 		processClientConnection(socket);
 	}
 	
@@ -86,6 +85,8 @@ public class MyServer {
 	
 	public synchronized void broadcastMessage (String message, ClientHandler sender) throws IOException {
 		broadcastMessage(message, sender, false);
+		sender.chatHistory(message, sender);
+		
 	}
 	
 	public synchronized void sendPrivateMessage (ClientHandler sender, String recipient, String privateMessage)

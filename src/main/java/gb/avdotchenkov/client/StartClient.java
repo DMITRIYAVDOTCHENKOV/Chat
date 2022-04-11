@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+
 public class StartClient extends Application {
 	
 	public TextField loginField;
@@ -40,7 +42,7 @@ public class StartClient extends Application {
 		FXMLLoader authLoader = new FXMLLoader(StartClient.class.getResource("auth-view.fxml"));
 		authStage = new Stage();
 		Scene scene = new Scene(authLoader.load());
-
+		
 		authStage.setScene(scene);
 		authStage.initModality(Modality.WINDOW_MODAL);
 		authStage.initOwner(primaryStage);

@@ -1,0 +1,24 @@
+
+q	java:S116!"\Rename this field "DateFormatSymbols" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þˆÄ÷
+Q	java:S125"<This block of commented-out lines of code should be removed.(¼Â¶ï
+S	java:S106I"9Replace this use of System.out or System.err by a logger.(óéÌíùÿÿÿÿ
+S	java:S106m"9Replace this use of System.out or System.err by a logger.(úµí»øÿÿÿÿ
+S	java:S106t"9Replace this use of System.out or System.err by a logger.(§ðÄ¹ýÿÿÿÿ
+Q	java:S125z"<This block of commented-out lines of code should be removed.(ÛÕê’
+N	java:S106¬"9Replace this use of System.out or System.err by a logger.(‚š‰1
+T	java:S106¸"9Replace this use of System.out or System.err by a logger.(²•Ã£ùÿÿÿÿ
+]	java:S899º"BDo something with the "boolean" value returned by "createNewFile".(Ð’Íùÿÿÿÿ
+Q
+java:S1117À":Rename "buffer" which hides the field declared at line 34.( ¦š’
+\
+java:S1128	"FRemove this unused import 'java.time.format.DateTimeFormatterBuilder'.(æëë¸
+]
+java:S1068"BRemove this unused "UPDATE_NEW_USERNAME_CMD_PREFIX" private field.(—¤¤œøÿÿÿÿ
+_
+java:S1068"DRemove this unused "NEW_USER_REGISTRATION_CMD_PREFIX" private field.(Úâ³³ùÿÿÿÿ
+K
+java:S1068!"5Remove this unused "DateFormatSymbols" private field.(þˆÄ÷
+E
+java:S1068""*Remove this unused "buffer" private field.(Æû•Õùÿÿÿÿ
+D
+java:S1068#".Remove this unused "histWriter" private field.(……óÉ

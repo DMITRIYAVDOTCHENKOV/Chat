@@ -14,18 +14,24 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class StartClient extends Application {
-	
+	public static final Logger logger = Logger.getLogger("client");
 	public TextField loginField;
 	public PasswordField passwordField;
 	private Network network;
 	private Stage primaryStage;
 	private Stage authStage;
 	private ChatController chatController;
-	
+
 	@Override public void start (Stage stage) throws IOException {
-		
+	Handler handler = new FileHandler("src/main/resources/Logger/logs/LogFromLoggerClient.log");
+	logger.addHandler(handler);
+	handler.setLevel(Level.ALL);
+
 		this.primaryStage = stage;
 		
 		network = new Network();
@@ -35,7 +41,7 @@ public class StartClient extends Application {
 		createChatDialog();
 		
 	}
-	
+
 	private void openAuthDialog () throws IOException {
 		FXMLLoader authLoader = new FXMLLoader(StartClient.class.getResource("auth-view.fxml"));
 		authStage = new Stage();

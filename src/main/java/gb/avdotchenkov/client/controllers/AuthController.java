@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import static gb.avdotchenkov.client.StartClient.logger;
+
 public class AuthController {
 	@FXML public TextField loginField;
 	@FXML public PasswordField passwordField;
@@ -22,7 +24,7 @@ public class AuthController {
 		
 		if (login.length() == 0 || password.length() == 0) {
 			startClient.showErrorAlert("Ошибка ввода при аутентификации", "Поля не должны быть пустыми");
-			
+			logger.warning("Ошибка ввода, поля не должны быть пустыми");
 			return;
 		}
 		
@@ -32,6 +34,8 @@ public class AuthController {
 			startClient.openChatDialog();
 		} else {
 			startClient.showErrorAlert("Ошибка аутентификации", authErrorMessage);
+			logger.warning("Ошибка аутентификации");
+
 		}
 	}
 	

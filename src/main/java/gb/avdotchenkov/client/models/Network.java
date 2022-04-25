@@ -8,6 +8,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+import static gb.avdotchenkov.client.StartClient.logger;
+
 public class Network {
 	
 	private static final String AUTH_CMD_PREFIX = "/auth"; // + login + password
@@ -51,6 +53,7 @@ public class Network {
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Соединение не установлено");
+			logger.warning("Ошибка соединения");
 		}
 	}
 	
@@ -84,6 +87,7 @@ public class Network {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
+				logger.warning(e.getMessage());
 			}
 		});
 		
@@ -104,7 +108,9 @@ public class Network {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
+			logger.warning(e.getMessage());
 			return e.getMessage();
+
 		}
 		
 	}
@@ -119,6 +125,7 @@ public class Network {
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("Ошибка при отправке сообщения");
+			logger.warning(e.getMessage());
 		}
 	}
 	

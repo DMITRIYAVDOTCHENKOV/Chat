@@ -1,0 +1,11 @@
+
+Z
+java:S2095."DUse try-with-resources or close this "Socket" in a "finally" clause.(ò©·Ù
+M	java:S1065"9Replace this use of System.out or System.err by a logger.(µäÌg
+S	java:S106y"9Replace this use of System.out or System.err by a logger.(ó‡âªüÿÿÿÿ
+Q
+java:S1068"6Remove this unused "AUTHERR_CMD_PREFIX" private field.(ó½×óÿÿÿÿÿ
+O
+java:S1068":Remove this unused "STOP_SERVER_CMD_PREFIX" private field.(€Â¶	
+T
+java:S1068"9Remove this unused "END_CLIENT_CMD_PREFIX" private field.(¯¨»ıÿÿÿÿ

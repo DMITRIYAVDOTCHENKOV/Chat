@@ -1,0 +1,8 @@
+апр. 25, 2022 2:01:50 PM gb.avdotchenkov.server.MyServer start
+SEVERE: СЕРВЕР ЗАПУЩЕН
+апр. 25, 2022 2:01:50 PM gb.avdotchenkov.server.MyServer waitAndProcessNewClientConnection
+SEVERE: ОЖИДАНИЕ КЛИЕНТА!
+апр. 25, 2022 2:02:05 PM gb.avdotchenkov.server.MyServer waitAndProcessNewClientConnection
+SEVERE: Клиент подключился!
+апр. 25, 2022 2:02:05 PM gb.avdotchenkov.server.MyServer waitAndProcessNewClientConnection
+SEVERE: ОЖИДАНИЕ КЛИЕНТА!

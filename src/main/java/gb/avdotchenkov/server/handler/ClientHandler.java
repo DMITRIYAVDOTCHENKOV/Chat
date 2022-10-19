@@ -3,11 +3,12 @@ package gb.avdotchenkov.server.handler;
 import gb.avdotchenkov.server.MyServer;
 import gb.avdotchenkov.server.authentication.AuthenticationService;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 import java.sql.SQLException;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ClientHandler {
@@ -29,10 +30,11 @@ public class ClientHandler {
 	private DataOutputStream out;
 	private DataInputStream in;
 	private String username;
+	private String DateFormatSymbols;
+	private static final List <String> buffer = new ArrayList <>();
+	private static PrintWriter histWriter = null;
 	
 	public ClientHandler (MyServer myServer, Socket socket) {
-		
-		
 		this.myServer = myServer;
 		clientSocket = socket;
 	}
@@ -173,4 +175,27 @@ public class ClientHandler {
 	@Override public String toString () {
 		return username;
 	}
-}
+	
+	
+	public void chatHistory (String message, ClientHandler sender) {
+		
+		File file = new File("src/main/resources/lib/history.txt");
+		if (! file.exists()) {
+			System.out.println("Файла истории нет, создадим его");
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		try (BufferedWriter buffer = new BufferedWriter(new FileWriter(file, true))) {
+			buffer.write(new Date(new Date().getTime()) + " " + sender.getUsername() + ": " + message + "\n");
+			buffer.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		}
+	}
+	
